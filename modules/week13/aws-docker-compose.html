@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AWS ECS with Docker Compose | MAD9124</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="Mobile API Development">
+    
+    <link rel="preload" href="/W2021/assets/css/0.styles.017086d5.css" as="style"><link rel="preload" href="/W2021/assets/js/app.d7d0378b.js" as="script"><link rel="preload" href="/W2021/assets/js/3.593aaff9.js" as="script"><link rel="preload" href="/W2021/assets/js/20.831810e9.js" as="script"><link rel="prefetch" href="/W2021/assets/js/10.7171d600.js"><link rel="prefetch" href="/W2021/assets/js/11.f11acbbb.js"><link rel="prefetch" href="/W2021/assets/js/12.5b4a11dc.js"><link rel="prefetch" href="/W2021/assets/js/13.86286472.js"><link rel="prefetch" href="/W2021/assets/js/14.4909fa5d.js"><link rel="prefetch" href="/W2021/assets/js/15.4393f472.js"><link rel="prefetch" href="/W2021/assets/js/16.1ec56656.js"><link rel="prefetch" href="/W2021/assets/js/17.a48a571a.js"><link rel="prefetch" href="/W2021/assets/js/18.1528acad.js"><link rel="prefetch" href="/W2021/assets/js/19.e53724b9.js"><link rel="prefetch" href="/W2021/assets/js/2.80a3ca67.js"><link rel="prefetch" href="/W2021/assets/js/21.97fb4a92.js"><link rel="prefetch" href="/W2021/assets/js/22.8b4aae43.js"><link rel="prefetch" href="/W2021/assets/js/23.28881643.js"><link rel="prefetch" href="/W2021/assets/js/24.d60be2e2.js"><link rel="prefetch" href="/W2021/assets/js/25.4ac50e54.js"><link rel="prefetch" href="/W2021/assets/js/26.0355407c.js"><link rel="prefetch" href="/W2021/assets/js/27.b30001c5.js"><link rel="prefetch" href="/W2021/assets/js/28.0535cda4.js"><link rel="prefetch" href="/W2021/assets/js/29.a6c29eb5.js"><link rel="prefetch" href="/W2021/assets/js/30.4a5517f4.js"><link rel="prefetch" href="/W2021/assets/js/31.3ea209c9.js"><link rel="prefetch" href="/W2021/assets/js/32.6f93d441.js"><link rel="prefetch" href="/W2021/assets/js/33.74ecb3ea.js"><link rel="prefetch" href="/W2021/assets/js/34.b892f7b2.js"><link rel="prefetch" href="/W2021/assets/js/35.89fa9999.js"><link rel="prefetch" href="/W2021/assets/js/36.1c26fa70.js"><link rel="prefetch" href="/W2021/assets/js/37.0ce4756c.js"><link rel="prefetch" href="/W2021/assets/js/38.ea7b5c17.js"><link rel="prefetch" href="/W2021/assets/js/39.40bb4459.js"><link rel="prefetch" href="/W2021/assets/js/4.3b346af5.js"><link rel="prefetch" href="/W2021/assets/js/40.4a7adf33.js"><link rel="prefetch" href="/W2021/assets/js/5.08c85bbe.js"><link rel="prefetch" href="/W2021/assets/js/6.2bfce3e0.js"><link rel="prefetch" href="/W2021/assets/js/7.3f40458e.js"><link rel="prefetch" href="/W2021/assets/js/8.747447ce.js"><link rel="prefetch" href="/W2021/assets/js/9.cddbc910.js">
+    <link rel="stylesheet" href="/W2021/assets/css/0.styles.017086d5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/W2021/" class="home-link router-link-active"><!----> <span class="site-name">MAD9124</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/W2021/overview/" class="nav-link">
+  Overview
+</a></div><div class="nav-item"><a href="/W2021/modules/" class="nav-link router-link-active">
+  Modules
+</a></div><div class="nav-item"><a href="/W2021/deliverables/" class="nav-link">
+  Deliverables
+</a></div><div class="nav-item"><a href="/W2021/resources/" class="nav-link">
+  Resources
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/W2021/overview/" class="nav-link">
+  Overview
+</a></div><div class="nav-item"><a href="/W2021/modules/" class="nav-link router-link-active">
+  Modules
+</a></div><div class="nav-item"><a href="/W2021/deliverables/" class="nav-link">
+  Deliverables
+</a></div><div class="nav-item"><a href="/W2021/resources/" class="nav-link">
+  Resources
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Introduction</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/W2021/overview/" class="sidebar-link">Overview</a></li><li><a href="/W2021/overview/contacts.html" class="sidebar-link">Contacts</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Deliverables</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Content Modules</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="aws-ecs-with-docker-compose"><a href="#aws-ecs-with-docker-compose" class="header-anchor">#</a> AWS ECS with Docker Compose</h2> <h3 id="set-aws-access-keys"><a href="#set-aws-access-keys" class="header-anchor">#</a> Set AWS Access Keys</h3> <p>Set up the local config and credentials files for AWS CLI access.</p> <div class="language- extra-class"><pre class="language-text"><code>mkdir ~/.aws
+touch ~/.aws/config
+touch ~/.aws/credentials
+</code></pre></div><p>Copy this text into the <code>config</code> file.</p> <div class="language- extra-class"><pre class="language-text"><code>[default]
+output = json
+region = us-east-1
+</code></pre></div><p>Get you AWS Classroom account credentials.
+<img src="/W2021/assets/img/aws-classroom-setup15.5f332920.png" alt="AWS account summary"></p> <p>Click the <code>account details</code> button and then on the next screen, click the <code>show</code> button.</p> <p><img src="/W2021/assets/img/aws-classroom-setup17.1f2e361b.png" alt="AWS account details"></p> <p>Copy the displayed content and paste it into the <code>~/.aws/credentials</code> file. It will look something like this ...</p> <div class="language- extra-class"><pre class="language-text"><code>[default]
+aws_access_key_id=&lt;YOUR_ACCESS_KEY&gt;
+aws_secret_access_key=&lt;YOUR_SECRET_KEY&gt;
+aws_session_token=&lt;A_VERY_LONG_STRING&gt;
+</code></pre></div><h3 id="create-a-docker-context"><a href="#create-a-docker-context" class="header-anchor">#</a> Create a Docker Context</h3> <p>Docker uses context profiles to know where to launch new container instances. The <code>default</code> context points to your local machine. Using the <code>docker context create ecs</code> command, you can create a new one that will point to your AWS Classroom account. The command will prompt you with two questions. Choose <code>An existing AWS profile</code> and <code>default</code> respectively.</p> <div class="language- extra-class"><pre class="language-text"><code>docker context create ecs mad9124
+? Create a Docker context using: An existing AWS profile
+? Select AWS Profile default
+Successfully created ecs context &quot;mad9124&quot;
+</code></pre></div><p>Verify your settings by running the <code>docker context ls</code> command.</p> <p>Switch the active Docker context to your new &quot;mad9124&quot; profile.</p> <div class="language- extra-class"><pre class="language-text"><code>docker context use mad9124
+</code></pre></div><p>Create a <code>docker-compose.yml</code> file.</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">express</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> &lt;YOUR_DOCKER_HUB_USER_NAME<span class="token punctuation">&gt;</span>/giftr<span class="token punctuation">-</span>api<span class="token punctuation">-</span>w21
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> giftr<span class="token punctuation">-</span>api<span class="token punctuation">-</span>w21
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">API_JWTKEY</span><span class="token punctuation">:</span> esftq9gj691gw18dmn2myul1nz9hqy
+      <span class="token key atrule">API_PORT</span><span class="token punctuation">:</span> <span class="token number">80</span>
+      <span class="token key atrule">NODE_ENV</span><span class="token punctuation">:</span> <span class="token string">'stage'</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token datetime number">80:80</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> node server.js
+    <span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+      <span class="token key atrule">x-aws-autoscaling</span><span class="token punctuation">:</span>
+        <span class="token key atrule">min</span><span class="token punctuation">:</span> <span class="token number">1</span>
+        <span class="token key atrule">max</span><span class="token punctuation">:</span> <span class="token number">3</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token number">70</span>
+</code></pre></div><p>Deploy your application to AWS.</p> <div class="language- extra-class"><pre class="language-text"><code>docker compose up -d
+</code></pre></div><p>It will take a few minutes to create the virtual network and spin-up your containers. Check on the deployment progress:</p> <div class="language- extra-class"><pre class="language-text"><code>docker compose ps
+</code></pre></div><p>When it is running, you will see the URL for the load-balancer displayed in the output.</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/12/2021, 10:52:07 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/W2021/assets/js/app.d7d0378b.js" defer></script><script src="/W2021/assets/js/3.593aaff9.js" defer></script><script src="/W2021/assets/js/20.831810e9.js" defer></script>
+  </body>
+</html>
